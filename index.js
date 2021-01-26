@@ -19,6 +19,11 @@ app.get("/", (request, response) => {
   response.sendFile(path.join(__dirname, "public/index.html"));
 });
 
+app.get("/name/:enteredName", (request, response) => {
+  console.log(request.params.enteredName);
+  response.send(`Hello ${request.params.enteredName}`);
+});
+
 // Listen for open port
 app.listen(portNumber, () => {
   console.log("App running on port:", portNumber);
