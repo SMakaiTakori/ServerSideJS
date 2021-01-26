@@ -2,15 +2,21 @@ console.log("Starting web app...");
 
 const express = require("express");
 const portNumber = 4000;
+const path = require("path");
 
 const app = express();
 console.log("App created...Attempting to listen on port:", portNumber);
 
 // ROUTES //
 
+// app.get("/", (request, response) => {
+//   console.log(request);
+//   response.send("Hello World!");
+// });
+
 app.get("/", (request, response) => {
-  console.log(request);
-  response.send("Hello World!");
+  app.use(express.static("public"));
+  response.sendFile(path.join(__dirname, "public/index.html"));
 });
 
 // Listen for open port
