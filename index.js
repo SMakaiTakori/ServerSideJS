@@ -9,13 +9,18 @@ console.log("App created...Attempting to listen on port:", portNumber);
 
 // ROUTES //
 
+// request object => all data coming from client - GOING TO SERVER
+// response object => all data coming from server back to client - BACK TO CLIENT
+
 // app.get("/", (request, response) => {
 //   console.log(request);
 //   response.send("Hello World!");
 // });
 
 app.get("/", (request, response) => {
+  //access/use public folder first
   app.use(express.static("public"));
+  //access file by the route using path package
   response.sendFile(path.join(__dirname, "public/index.html"));
 });
 
@@ -24,7 +29,7 @@ app.get("/name/:enteredName", (request, response) => {
   response.send(`Hello ${request.params.enteredName}`);
 });
 
-// Listen for open port
+// Listening for open port
 app.listen(portNumber, () => {
   console.log("App running on port:", portNumber);
 });
