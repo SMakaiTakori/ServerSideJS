@@ -1,6 +1,6 @@
 # Setting up a server using Node and Express Instructions
 
-1. Create app folder and `run npm init` in terminal after you cd into the directory
+1. Create app folder and run `npm init` in terminal after you cd into the directory
 
 2. Make sure npm and node.js are both installed
 
