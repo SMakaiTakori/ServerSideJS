@@ -13,3 +13,9 @@ run `npm install --save express`
 
 This will give us our node_modules/packages/dependencies
 node depends on these folders to run express
+
+EXERCISE 1 (Creating a web network)
+1A) Create a route that will return a simple "Hello world" message
+2A) Create a route that is set to "/name". However, change this route slightly so that it will accept a parameter, which will represent a persons name. The response should return a message saying "Hello" and the persons name.
+
+EX: '/name/Michael' => "Hello Michael!"
